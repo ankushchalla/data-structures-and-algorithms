@@ -12,6 +12,7 @@ function bubbles(arr) {
     let start = 0;
     let end = arr.length - 1;
     while (start < end) {
+        // console.log(arr);
         // Optimization. 
         let swapped = false;
         for (let i = start; i < end; i++) {
@@ -35,3 +36,8 @@ for (let i = 0; i < 50; i++) {
 console.log("random array, unsorted:", randomArray);
 bubbles(randomArray);
 console.log("random array, sorted:", randomArray);
+
+let almostSorted = [8, 1, 2, 3, 4, 5];
+console.log("almostSorted, unsorted:", almostSorted);
+bubbles(almostSorted);
+console.log("almostSorted, sorted:", almostSorted);
