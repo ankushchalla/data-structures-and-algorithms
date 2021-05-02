@@ -11,4 +11,4 @@
 - Optimization: If no swaps are made, tell the program to stop sorting.
     - Basically short circuiting the code. If you didn't swap the last round, 
         you're not gonna swap this round. 
-    - Thus, on 'almost' sorted arrays, this optimized version of bubble sort takes O(1) time.
+    - Thus, on 'almost' sorted arrays, this optimized version of bubble sort takes O(n) time.

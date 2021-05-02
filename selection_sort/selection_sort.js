@@ -6,23 +6,22 @@ function swap(i, j, arr) {
     arr[i] = temp;
 }
 
-
-function bubbles(arr) {
-    if (arr.length === 0) return;
+function selectionSort(arr) {
+    if (arr.length === 0 || arr == null) return;
     let start = 0;
     let end = arr.length;
+    let min;
+    let minIndex = 0;
     while (start < end) {
-        // console.log(arr);
-        // Optimization. 
-        let swapped = false;
+        min = Infinity;
         for (let i = start; i < end; i++) {
-            if (arr[i] > arr[i + 1]) {
-                swap(i, i + 1, arr);
-                swapped = true;
+            if (arr[i] < min) {
+                min = arr[i];
+                minIndex = i;
             }
         }
-        if (!swapped) break;
-        end--;
+        swap(start, minIndex, arr);
+        start++;
     }
 }
 
@@ -36,14 +35,9 @@ for (let i = 0; i < 50; i++) {
 let backwardsArray = [4,3,2,1];
 
 console.log("random array, unsorted:", randomArray);
-bubbles(randomArray);
+selectionSort(randomArray);
 console.log("random array, sorted:", randomArray);
 
 console.log("backward array, unsorted:", backwardsArray);
-bubbles(backwardsArray);
+selectionSort(backwardsArray);
 console.log("backward array, sorted:", backwardsArray);
-
-let almostSorted = [8, 1, 2, 3, 4, 5];
-console.log("almostSorted, unsorted:", almostSorted);
-bubbles(almostSorted);
-console.log("almostSorted, sorted:", almostSorted);
