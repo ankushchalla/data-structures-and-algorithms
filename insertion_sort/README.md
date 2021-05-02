@@ -8,3 +8,6 @@
 
 ## Notes
 - Builds up the sort by gradually creating a larger left side which is always sorted.
+- Similar to bubble sort, if array is 'almost' sorted, insertion sort takes O(n) time.
+- Also, say we wanted to sort values "as they are coming in."
+    - Insertion sort is great because it'll insert values into their correct position.
