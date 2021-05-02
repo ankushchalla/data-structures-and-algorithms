@@ -12,9 +12,15 @@ function bubbles(arr) {
     let start = 0;
     let end = arr.length - 1;
     while (start < end) {
+        // Optimization. 
+        let swapped = false;
         for (let i = start; i < end; i++) {
-            if (arr[i] > arr[i + 1]) swap(i, i + 1, arr);
+            if (arr[i] > arr[i + 1]) {
+                swap(i, i + 1, arr);
+                swapped = true;
+            }
         }
+        if (!swapped) break;
         end--;
     }
 }
