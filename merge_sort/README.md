@@ -18,3 +18,10 @@ This is a helper function used to merge already sorted arrays.
 ## Pseudocode: Merge-sort
 1. Break up the unsorted array recursively into halves until you have arrays that are empty or 1 element.
 2. Merge those arrays together using the merge helper function.
+
+## Time complexity: O(nlogn)
+1. How many times do you have to break in half an array of length n until all the pieces have 0 or 1 element? **log<sub>2</sub>n** times.
+2. We also have to merge **each level**. How many elements are at each level? n elements. 
+    1. For example, say we start with the array `[4,3,2,1]`. This array has 4 elements. 
+    2. The first recursion, we break the array into two halves that are each 2 elements long. Total: 4 elements at this level. 
+3. There are log<sub>2</sub>n levels in the recursion, with n elements at each level, which implies time complexity of O(nlogn).
