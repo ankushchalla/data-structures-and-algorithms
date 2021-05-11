@@ -1,5 +1,5 @@
 # data-structures-and-algorithms
-Implementations of data structures and algorithms in JavaScript. 
+Implementations of data structures and algorithms in JavaScript.
 
 ## Cool resources
 - [visualgo](https://visualgo.net/en/sorting)
