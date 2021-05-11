@@ -13,7 +13,11 @@ class BinarySearchTree {
     }
 
     insert(newNumber, current = this.root) {
-        let newNode = new Node(newNumber)
+        let newNode = new Node(newNumber);
+        if (current == null) {
+            this.root = newNode;
+            return
+        }
         if (newNode.value <= current.value) {
             if (current.left === null) current.left = newNode;
             else this.insert(newNode, current.left);
@@ -24,13 +28,15 @@ class BinarySearchTree {
         }
         return newNode;
     }
+
 }
 
+
 let tree = new BinarySearchTree();
-tree.root = new Node(10);
+tree.insert(10);
 tree.insert(15);
 tree.insert(25);
 tree.insert(7);
 tree.insert(17);
 tree.insert(8);
-console.log(tree.root.left);
+console.log(tree.root);
