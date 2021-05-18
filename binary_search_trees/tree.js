@@ -29,7 +29,7 @@ class BinarySearchTree {
         return newNode;
     }
 
-    find(number, current = this.root) {
+    contains(number, current = this.root) {
         if (number < current.value) {
             if (current.left) return this.find(number, current.left);
             return false
@@ -51,4 +51,4 @@ tree.insert(25);
 tree.insert(7);
 tree.insert(17);
 tree.insert(8);
-console.log(tree.find(25));
+console.log(tree.contains(4));
