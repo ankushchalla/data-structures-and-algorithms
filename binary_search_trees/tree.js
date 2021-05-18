@@ -20,13 +20,25 @@ class BinarySearchTree {
         }
         if (newNode.value <= current.value) {
             if (current.left === null) current.left = newNode;
-            else this.insert(newNode, current.left);
+            else this.insert(newNode.value, current.left);
         }
         else {
             if (current.right === null) current.right = newNode;
-            else this.insert(newNode, current.right);
+            else this.insert(newNode.value, current.right);
         }
         return newNode;
+    }
+
+    find(number, current = this.root) {
+        if (number < current.value) {
+            if (current.left) return this.find(number, current.left);
+            return false
+        }
+        else if (number > current.value) {
+            if (current.right) return this.find(number, current.right);
+            return false;
+        }
+        return true;
     }
 
 }
@@ -39,4 +51,4 @@ tree.insert(25);
 tree.insert(7);
 tree.insert(17);
 tree.insert(8);
-console.log(tree.root);
+console.log(tree.find(25));
